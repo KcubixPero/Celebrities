@@ -1,72 +1,63 @@
-Face Recognition Model Trainer (OpenCV + LBPH)
+<h1 align="center">Face Recognition Training Script</h1>
 
-This project trains a face recognition model using OpenCV's LBPH (Local Binary Patterns Histogram) algorithm.
-It detects faces using a Haar Cascade classifier, extracts face regions, labels them, and trains a recognizer model.
+<p align="center">
+  <strong>A Python + OpenCV project that trains an LBPH face recognizer using Haar Cascade detection.</strong>
+</p>
 
-🚀 Features
+<hr>
 
-Automatically loads training images from Faces/train/<person_name>/
+<h2>📁 Project Structure</h2>
 
-Detects faces using Haar Cascade
-
-Extracts face regions (ROI)
-
-Trains an LBPH recognizer
-
-Saves:
-
-face_trained.yml – trained model
-
-features.npy – face features
-
-labels.npy – labels
-
-📁 Project Structure
-Celebrities/
-│── haar_face.xml
-│── face_train.py
-│── face_trained.yml      (Generated after training)
-│── features.npy          (Generated after training)
-│── labels.npy            (Generated after training)
-
+<pre>
 Faces/
-|──train/
-├── Person1/
-├── img1.jpg
-├── img2.jpg
-├── Person2/
-├── img1.jpg
-├── img2.jpg
-.....
+ └── train/
+      ├── Person1/
+      ├── Person2/
+      └── Person3/
+Celebrities/
+ ├── haar_face.xml
+ ├── face_trained.yml
+ ├── features.npy
+ └── labels.npy
+face_train.py
+</pre>
 
-🧠 How the Training Works
+<hr>
 
-Load Haar Cascade
+<h2>🚀 How It Works</h2>
 
-Loop through each person folder
+<ul>
+  <li>Reads images from <code>Faces/train</code></li>
+  <li>Detects faces using <code>Haar Cascade</code></li>
+  <li>Crops face regions and stores them as features</li>
+  <li>Labels each face based on folder name</li>
+  <li>Trains an <strong>LBPH Face Recognizer</strong></li>
+  <li>Saves:</li>
+  <ul>
+    <li><code>face_trained.yml</code></li>
+    <li><code>features.npy</code></li>
+    <li><code>labels.npy</code></li>
+  </ul>
+</ul>
 
-Read images and convert to grayscale
+<hr>
 
-Detect faces
+<h2>📦 Requirements</h2>
 
-Extract face ROI and save as feature
+<pre>
+pip install opencv-python
+pip install opencv-contrib-python
+numpy
+</pre>
 
-Generate numeric labels
+<hr>
 
-Train LBPH recognizer
+<h2>▶️ Running the Training Script</h2>
 
-Save model + numpy arrays
-
-🧪 Run Training Script
+<pre>
 python face_train.py
+</pre>
 
+<hr>
 
-📦 Model Output
-
-face_trained.yml → Trained recognizer model
-
-features.npy → Stored face regions
-
-labels.npy → Numeric labels
-
-You can later load this model for real-time face detection.
+<p>This project is for educational purposes only.</p>
